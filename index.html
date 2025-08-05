@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hypertech Colombia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Agregamos Font Awesome para iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   <style>
     :root {
       --color-primary: #23ABDB;
@@ -14,126 +14,121 @@
       --color-valor: #f9f9f9;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: var(--color-dark);
-      color: var(--color-dark);
+      color: var(--color-light);
     }
 
-    header {
-      background: var(--color-light); /* Fondo blanco */
-      color: var(--color-dark);
-      padding: 20px 20px;
+    header, footer {
       text-align: center;
-      position: relative;
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      padding: 20px;
     }
 
-    header img {
-      width: 420px;
-      margin-top: 30px;
-    }
-
-      .speech img {
-      width: 600px;
+    .speech img {
+      width: 100%;
+      max-width: 400px;
       margin-top: 20px;
-
     }
 
-    /* Caja superpuesta con el speech */
-    .speech-container {
-      background: var(--color-primary); /* Fondo azul */
-      padding: 60px 80px;
-      margin-top: -60px; /* Montada sobre el fondo blanco */
-      border-radius: 20px;
-      z-index: 1;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    .speech {
+      padding: 60px 20px;
+      background: var(--color-dark);
+      text-align: center;
+    }
+
+    .speech h1, .speech h2 {
+      color: var(--color-light);
+      margin-bottom: 20px;
     }
 
     .speech h1 {
-      font-size: 3rem;
-      margin: 30;
-      color: var(--color-light);
-      text-align: center;
+      font-size: 2rem;
     }
 
     .speech h2 {
-      font-size: 1.5rem;
-      margin: 30;
-      color: var(--color-light);
-      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .speech .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .speech .buttons a {
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .speech .buttons a:first-child {
+      background-color: #02CB9E;
+    }
+
+    .speech .buttons a:last-child {
+      background-color: #23ABDB;
+    }
+
+    section {
+      padding: 40px 20px;
     }
 
     .propuesta, .servicios, .contacto {
-      padding: 30px 20px;
-      max-width: 1200px;
-      margin: auto;
+      text-align: center;
     }
 
-    .propuesta h2, .servicios h2, .contacto h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      font-weight: bold;
-      color:  #f9f9f9;
+    .propuesta {
+      background: linear-gradient(225deg, #02CB9E, #23ABDB);
+      border-radius: 30px 30px 0 0;
+    }
+
+    .servicios {
+      background: linear-gradient(135deg, #23ABDB, #02CB9E);
+    }
+
+    .contacto {
+      background: linear-gradient(225deg, #02CB9E, #23ABDB);
+      border-radius: 0 0 30px 30px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .valor, .servicio {
-      background: #f9f9f9;
+      background: var(--color-valor);
+      color: var(--color-dark);
       border-radius: 12px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: transform 0.3s ease;
+      padding: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .valor:hover, .servicio:hover {
-      transform: translateY(-5px);
-    }
-
     .valor i, .servicio i {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
       color: var(--color-primary);
-    }
-
-    /* Sección Propuesta - Fondo y superposición */
-    .speech {
-      background: var(--color-dark); /* Fondo suave */
-      /* Esquinas curvas en la parte superior */
-      margin-top: -60px; /* Montada sobre el fondo blanco */
-      padding: 80px 80px; /* Más padding para darle aire */
-      z-index: 1;
-      position: relative;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .propuesta {
-      background: linear-gradient(225deg, #02CB9E, #23ABDB); /* Fondo suave */
-      border-radius: 30px 30px 0 0; /* Esquinas curvas en la parte superior */
-      margin-top: -60px; /* Montada sobre el fondo blanco */
-      padding: 30px 20px; /* Más padding para darle aire */
-      z-index: 1;
-      position: relative;
-    }
-
-    /* Sección Servicios - Fondo diferente */
-    .servicios {
-      background: linear-gradient(135deg, #23ABDB, #02CB9E); /* Fondo en tonos azules suaves */
-    }
-
-    /* Sección Contacto - Fondo diferente */
-    .contacto {
-      background: linear-gradient(225deg, #02CB9E, #23ABDB); /* Fondo azul claro */
-      border-radius: 0px 0px 30px 30px;
     }
 
     form {
@@ -146,8 +141,8 @@
 
     form input, form textarea {
       padding: 15px;
-      border: 1px solid #ccc;
       border-radius: 8px;
+      border: none;
       font-size: 1em;
     }
 
@@ -159,36 +154,43 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    form button:hover {
-      opacity: 0.9;
+    .contacto .social {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
     }
 
-    footer {
-      background: var(--color-dark);
+    .social a {
+      text-decoration: none;
       color: white;
-      padding: 30px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social img {
+      width: 30px;
     }
 
     .float-btn {
       position: fixed;
       right: 20px;
       z-index: 999;
-      width: 55px;
-      height: 55px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
     }
 
     .float-btn img {
-      width: 30px;
+      width: 26px;
     }
 
     .whatsapp {
@@ -201,118 +203,101 @@
       background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
     }
 
-    @media (max-width: 768px) {
-      .float-btn {
-        width: 50px;
-        height: 50px;
+    @media (max-width: 600px) {
+      .speech h1 {
+        font-size: 1.5rem;
       }
 
-      .float-btn img {
-        width: 26px;
+      .speech h2 {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
- 
-
-  <!-- Caja superpuesta con el speech -->
-
   <section class="speech">
     <img src="logo.png" alt="Logo Hypertech" />
-<h1>¿Estás cansado de que la tecnología limite tus proyectos?</h1>
-  <h2>¡En Hypertech Colombia te ayudamos a escalar tu productividad con equipos de alto rendimiento, asesoría experta y un soporte técnico confiable que se adapta a tus necesidades!</h2>    
- <div style="margin-top: 30px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-    <a href="#servicios" style="text-decoration: none; background: #02CB9E; color: white; padding: 12px 24px; border-radius: 10px;">Ver Servicios</a>
-    <a href="#contacto" style="text-decoration: none; background: #23ABDB; color: white; padding: 12px 24px; border-radius: 10px;">Contáctanos</a>
-  </div>  
-</section>
+    <h1>¿Estás cansado de que la tecnología limite tus proyectos?</h1>
+    <h2>¡En Hypertech Colombia te ayudamos a escalar tu productividad con equipos de alto rendimiento, asesoría experta y soporte técnico confiable!</h2>
+    <div class="buttons">
+      <a href="#servicios">Ver Servicios</a>
+      <a href="#contacto">Contáctanos</a>
+    </div>
+  </section>
 
   <section class="propuesta">
     <h2>¿Por qué elegir Hypertech Colombia?</h2>
-<div class="grid-3">
-  <div class="valor">
-    <i class="fas fa-laptop-code"></i>
-    <h3>Expertos en Tecnología</h3>
-    <p>Contamos con más de una década de experiencia ayudando a empresas, emprendedores y profesionales a encontrar soluciones tecnológicas inteligentes, personalizadas y rentables para optimizar sus operaciones.</p>
-  </div>
-  <div class="valor">
-    <i class="fas fa-cogs"></i>
-    <h3>Equipos y Accesorios</h3>
-    <p>Somos distribuidores oficiales de las marcas más reconocidas del mercado. Ofrecemos productos originales, con garantía, servicio postventa y opciones personalizadas según tu presupuesto y necesidades.</p>
-  </div>
-  <div class="valor">
-    <i class="fas fa-headset"></i>
-    <h3>Atención Personalizada</h3>
-    <p>En Hypertech no solo vendemos tecnología, también te acompañamos en cada paso. Nuestro equipo está disponible por WhatsApp e Instagram para resolver tus dudas, brindarte asesoría inmediata y garantizar tu satisfacción total.</p>
-  </div>
-</div>
+    <div class="grid-3">
+      <div class="valor">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Expertos en Tecnología</h3>
+        <p>10+ años de experiencia ayudando a empresas y profesionales a encontrar soluciones tecnológicas personalizadas y rentables.</p>
+      </div>
+      <div class="valor">
+        <i class="fas fa-cogs"></i>
+        <h3>Equipos y Accesorios</h3>
+        <p>Distribuidores oficiales con productos originales, garantía, servicio postventa y opciones personalizadas.</p>
+      </div>
+      <div class="valor">
+        <i class="fas fa-headset"></i>
+        <h3>Atención Personalizada</h3>
+        <p>Soporte por WhatsApp e Instagram con asesoría inmediata y cercana para garantizar tu satisfacción.</p>
+      </div>
+    </div>
   </section>
 
   <section class="servicios" id="servicios">
     <h2>Nuestros Servicios</h2>
-<div class="grid-3">
-  <div class="servicio">
-    <i class="fas fa-laptop"></i>
-    <h3>Venta de Equipos</h3>
-    <p>Ofrecemos una amplia gama de computadores, portátiles, impresoras y estaciones de trabajo ideales para oficinas, estudiantes, empresas y entornos profesionales exigentes. Te ayudamos a elegir el equipo perfecto.</p>
-  </div>
-  <div class="servicio">
-    <i class="fas fa-mouse"></i>
-    <h3>Accesorios de Tecnología</h3>
-    <p>Desde teclados ergonómicos hasta cámaras web, monitores, mouses y mucho más. Todo lo que necesitas para mejorar tu productividad, comodidad y experiencia tecnológica está aquí, con entrega rápida y segura.</p>
-  </div>
-  <div class="servicio">
-    <i class="fas fa-tools"></i>
-    <h3>Servicios Técnicos</h3>
-    <p>¿Tu equipo necesita mantenimiento, soporte o instalación? Contamos con técnicos calificados que ofrecen asistencia remota y presencial, asegurando un servicio rápido, profesional y confiable en cada intervención.</p>
-  </div>
-</div>
+    <div class="grid-3">
+      <div class="servicio">
+        <i class="fas fa-laptop"></i>
+        <h3>Venta de Equipos</h3>
+        <p>Computadores, portátiles, impresoras y estaciones de trabajo para oficinas, estudiantes y empresas.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-mouse"></i>
+        <h3>Accesorios</h3>
+        <p>Teclados, cámaras, monitores, mouses y mucho más. Entrega rápida y segura.</p>
+      </div>
+      <div class="servicio">
+        <i class="fas fa-tools"></i>
+        <h3>Servicios Técnicos</h3>
+        <p>Mantenimiento, soporte e instalaciones remotas y presenciales por técnicos calificados.</p>
+      </div>
+    </div>
   </section>
 
   <section class="contacto" id="contacto">
-  <h2>¿Hablamos?</h2>
-  <form action="https://formsubmit.co/tu-email@ejemplo.com" method="POST">
-    <input type="text" name="nombre" placeholder="Tu nombre" required />
-    <input type="email" name="email" placeholder="Tu correo electrónico" required />
-    <input type="tel" name="telefono" placeholder="Tu número de teléfono" required />
-    <textarea name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
-    <button type="submit">Enviar mensaje</button>
-  </form>
+    <h2>¿Hablamos?</h2>
+    <form action="https://formsubmit.co/tu-email@ejemplo.com" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="telefono" placeholder="Tu teléfono" required />
+      <textarea name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
 
-  <div style="margin-top: 20px; text-align: center;">
-    <p>También puedes contactarnos directamente:</p>
-    
-    <div style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 20px;">
-  <div style="display: inline-flex; align-items: center; gap: 8px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30" />
-    <a href="https://wa.me/573024815667" target="_blank" style="color: white; text-decoration: none;">+57 302 4815667</a>
-  </div>
-
-  <div style="display: inline-flex; align-items: center; gap: 8px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30" />
-    <a href="https://instagram.com/hypertechcolombia" target="_blank" style="color: white; text-decoration: none;">@hypertechcolombia</a>
-  </div>
-</div>
-
-
-
-
-  </div>
-</section>
+    <div class="social">
+      <a href="https://wa.me/573024815667" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        +57 302 4815667
+      </a>
+      <a href="https://instagram.com/hypertechcolombia" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+        @hypertechcolombia
+      </a>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Hypertech Colombia. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botones flotantes -->
   <a class="float-btn whatsapp" href="https://wa.me/573024815667" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" />
   </a>
   <a class="float-btn instagram" href="https://instagram.com/hypertechcolombia" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"/>
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
   </a>
-
 </body>
 </html>
